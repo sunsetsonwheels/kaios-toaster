@@ -31,7 +31,7 @@ Get a copy from the `/kaios-toaster` folder and include it locally in your packa
 Then, whenever you want to create a toast message, use the following syntax:
 
 ```js
-kaiosNativeToast({
+kaiosToaster({
   message: 'some messsage in string',
   position: 'north/south',
   type: 'success/warning/error',

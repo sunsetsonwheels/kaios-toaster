@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function spawnNewToast () {
-    kaiosNativeToast({
+    kaiosToaster({
       message: currentToastText,
       position: currentSettings.toastPosition,
       type: currentSettings.toastType,

@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.kaiosNativeToast = factory());
+  (global.kaiosToaster = factory());
 }(this, (function () { 'use strict';
 
   /*!
@@ -34,8 +34,6 @@
     var rounded = ref.rounded; if ( rounded === void 0 ) rounded = false;
     var type = ref.type; if ( type === void 0 ) type = '';
     var debug = ref.debug; if ( debug === void 0 ) debug = false;
-    var edge = ref.edge; if ( edge === void 0 ) edge = false;
-    var closeOnClick = ref.closeOnClick; if ( closeOnClick === void 0 ) closeOnClick = false;
     var elements = ref.elements; if ( elements === void 0 ) elements = [];
 
     if (prevToast) {
@@ -46,25 +44,20 @@
     this.position = position;
     this.el = el;
     this.timeout = timeout;
-    this.closeOnClick = closeOnClick;
     this.toast = document.createElement('div');
-    this.toast.className = "native-toast native-toast-"+this.position;
+    this.toast.className = "kaios-toast kaios-toast-"+this.position;
 
     if (type) {
-      this.toast.className += " native-toast-" + type;
+      this.toast.className += " kaios-toast-" + type;
     }
 
     var messageElement = document.createElement('div');
-    messageElement.className = 'native-toast-message';
     messageElement.innerHTML = this.message;
     [messageElement ].concat( elements).forEach(function (el) {
       this$1.toast.appendChild(el);
     });
-    var isMobile = document.body.clientWidth < 768;
 
-    if (edge || isMobile) {
-      this.toast.className += ' native-toast-edge';
-    } else if (rounded) {
+    if (rounded) {
       this.toast.style.borderRadius = '33px';
     }
 
@@ -75,19 +68,13 @@
     if (!debug && timeout) {
       this.hide();
     }
-
-    if (this.closeOnClick) {
-      this.toast.addEventListener('click', function () {
-        this$1.destroy();
-      });
-    }
   };
 
   Toast.prototype.show = function show () {
       var this$1 = this;
 
     setTimeout(function () {
-      this$1.toast.classList.add('native-toast-shown');
+      this$1.toast.classList.add('kaios-toast-shown');
     }, 300);
   };
 
@@ -103,7 +90,7 @@
       var this$1 = this;
 
     if (!this.toast) { return; }
-    this.toast.classList.remove('native-toast-shown');
+    this.toast.classList.remove('kaios-toast-shown');
     setTimeout(function () {
       if (this$1.toast) {
         this$1.el.removeChild(this$1.toast);

@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "name": "KaiOS Toaster Demo",
+  "description": "A demo for kaios-toaster.",
+  "launch_path": "/demo.html",
+  "icons": {
+    "56": "/demo_56.png",
+    "112": "/demo_112.png"
+  },
+  "theme_color": "#ffffff",
+  "chrome": {
+    "statusbar": "overlap"
+  },
+  "developer": {
+    "name": "jkelol111",
+    "url": "https://jkelol111.github.io"
+  }
+}

@@ -16,7 +16,7 @@ Well here you go. I took [egoist's native-toast](https://github.com/egoist/nativ
 
 Get a copy from the `/kaios-toaster` folder and include it locally in your packaged app, or get one served directly from GitHub Pages:
 
-```
+```html
 ...
 
 <link rel="stylesheet" href="https://jkelol111.github.io/kaios-toaster/kaios-toaster/kaios-toaster.css">

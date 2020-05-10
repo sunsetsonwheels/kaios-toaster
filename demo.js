@@ -75,13 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
     currentSettings.toastType = defaultSettings.toastType
     settingsElements.toastType.value = currentSettings.toastType
 
-    localStorage.setItem('appTheme', defaultSettings.appTheme)
-    currentSettings.appTheme = defaultSettings.appTheme
-    settingsElements.appTheme.value = currentSettings.appTheme
-
     localStorage.setItem('toastTimeout', defaultSettings.toastTimeout)
     currentSettings.toastTimeout = defaultSettings.toastTimeout
     settingsElements.toastTimeout.innerText = currentSettings.toastTimeout
+
+    localStorage.setItem('appTheme', defaultSettings.appTheme)
+    currentSettings.appTheme = defaultSettings.appTheme
+    settingsElements.appTheme.value = currentSettings.appTheme
+    switchTheme()
   }
 
   function spawnNewToast () {

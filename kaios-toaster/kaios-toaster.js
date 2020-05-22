@@ -52,6 +52,7 @@
     }
 
     var messageElement = document.createElement('div');
+    messageElement.className = 'kaios-toast-content'
     messageElement.innerHTML = this.message;
     [messageElement ].concat( elements).forEach(function (el) {
       this$1.toast.appendChild(el);

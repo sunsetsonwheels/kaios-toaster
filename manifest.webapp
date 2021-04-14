@@ -14,5 +14,14 @@
   "developer": {
     "name": "jkelol111",
     "url": "https://jkelol111.github.io"
+  },
+  "type": "web",
+  "default_locale": "en-US",
+  "locales": {
+    "en-US": {
+      "name": "KaiOS Toaster Demo",
+      "subtitle": "Demo app for kaios-toaster.",
+      "description": "A demo for kaios-toaster. Open-sourced at https://github.com/jkelol111/kaios-toaster"
+    }
   }
 }
